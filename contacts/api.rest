@@ -1,5 +1,5 @@
 ### GET all contacts
-GET https://cse341-contacts-tsfu.onrender.com
+GET https://cse341-contacts-tsfu.onrender.com/contacts
 
 ### GET single contact
 GET http://localhost:8080/contacts/69ac523ed5029c7caed60dc6
