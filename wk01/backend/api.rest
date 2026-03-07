@@ -1,0 +1,5 @@
+### ─── Professional API Tests ───────────────────────────────────────────────
+
+### GET all professional data
+GET http://localhost:8080/professional
+Content-Type: application/json
