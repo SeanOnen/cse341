@@ -1,6 +1,5 @@
 ### GET all contacts
 GET https://cse341-contacts-tsfu.onrender.com/contacts
-
 ### GET single contact
 ### Replace `69ac5f33a06e3e0032879d76` with the actual contact ID you want to retrieve.
 GET http://localhost:8080/contacts/69ac5f33a06e3e0032879d76
