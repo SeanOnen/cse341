@@ -1,3 +1,14 @@
+### POST new contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Mary",
+  "lastName": "Johnson",
+  "email": "mary@example.com",
+  "favoriteColor": "Purple",
+  "birthday": "1988-11-30"
+}
 ### GET all contacts
 GET https://cse341-contacts-tsfu.onrender.com/contacts
 ### GET single contact

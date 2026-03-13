@@ -5,7 +5,7 @@
     "description": "API for managing contacts",
     "version": "1.0.0"
   },
-  "host": "https://cse341-contacts-tsfu.onrender.com",
+  "host": "cse341-contacts-tsfu.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"

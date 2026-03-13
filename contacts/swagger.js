@@ -5,7 +5,7 @@ const doc = {
     title: 'Contacts API',
     description: 'API for managing contacts'
   },
-  host: 'https://cse341-contacts-tsfu.onrender.com',
+  host: 'cse341-contacts-tsfu.onrender.com',
   schemes: ['https']
 };
 
