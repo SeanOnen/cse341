@@ -5,7 +5,7 @@ const doc = {
     title: 'Inventory API',
     description: 'API for managing products and categories'
   },
-  host: 'your-render-url.onrender.com',
+  host: 'cse341-inventory-ks3f.onrender.com', 
   schemes: ['https']
 };
 

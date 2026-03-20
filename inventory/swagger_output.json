@@ -5,10 +5,10 @@
     "description": "API for managing products and categories",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-inventory-ks3f.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/products/": {
