@@ -1,0 +1,44 @@
+### GET all products
+GET http://localhost:8080/products
+
+### GET single product
+GET http://localhost:8080/products/69bd41afad23a95a8f5b05c1
+
+### POST product (protected - requires auth)
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+  "name": "Test Product",
+  "description": "Testing auth protection",
+  "price": 9.99,
+  "quantity": 5,
+  "category": "Electronics",
+  "brand": "Test",
+  "sku": "TEST-001",
+  "inStock": true
+}
+
+### GET all categories
+GET http://localhost:8080/categories
+
+### GET single category
+GET http://localhost:8080/categories/69bd41afad23a95a8f5b05c1
+
+### POST category (protected - requires auth)
+POST http://localhost:8080/categories
+Content-Type: application/json
+
+{
+  "name": "Sports",
+  "description": "Sports and outdoor equipment"
+}
+
+### Auth - Login
+GET http://localhost:8080/auth/github
+
+### Auth - Profile
+GET http://localhost:8080/auth/profile
+
+### Auth - Logout
+GET http://localhost:8080/auth/logout

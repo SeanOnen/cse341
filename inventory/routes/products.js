@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product');
 const { body, validationResult } = require('express-validator');
+const { isAuthenticated } = require('../middleware/auth');
 
 // Validation rules
 const productValidation = [
@@ -36,8 +37,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /products
-router.post('/', productValidation, async (req, res) => {
+// POST /products - protected
+router.post('/', isAuthenticated, productValidation, async (req, res) => {
   /*  #swagger.parameters['body'] = {
         in: 'body',
         description: 'Product data',
@@ -64,8 +65,8 @@ router.post('/', productValidation, async (req, res) => {
   }
 });
 
-// PUT /products/:id
-router.put('/:id', productValidation, async (req, res) => {
+// PUT /products/:id - protected
+router.put('/:id', isAuthenticated, productValidation, async (req, res) => {
   /*  #swagger.parameters['body'] = {
         in: 'body',
         description: 'Updated product data',
@@ -92,8 +93,8 @@ router.put('/:id', productValidation, async (req, res) => {
   }
 });
 
-// DELETE /products/:id
-router.delete('/:id', async (req, res) => {
+// DELETE /products/:id - protected
+router.delete('/:id', isAuthenticated, async (req, res) => {
   try {
     const deleted = await Product.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ error: 'Product not found' });
