@@ -5,8 +5,8 @@ const doc = {
     title: 'BioTrack API',
     description: 'Biosystems Engineering Research Management API. POST, PUT and DELETE routes require authentication via GitHub OAuth at /auth/github'
   },
-  host: 'localhost:8080',
-  schemes: ['http']
+  host: 'cse341-biotrack.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = './swagger_output.json';
