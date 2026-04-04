@@ -1,0 +1,62 @@
+### GET all experiments
+GET http://localhost:8080/experiments
+
+### GET single experiment
+GET http://localhost:8080/experiments/PASTE_ID_HERE
+
+### POST experiment (protected)
+POST http://localhost:8080/experiments
+Content-Type: application/json
+
+{
+  "title": "New Experiment",
+  "description": "Testing the POST endpoint",
+  "startDate": "2026-05-01",
+  "status": "planned",
+  "researcherId": "R003"
+}
+
+### PUT experiment (protected)
+PUT http://localhost:8080/experiments/PASTE_ID_HERE
+Content-Type: application/json
+
+{
+  "title": "Updated Experiment",
+  "description": "Updated description",
+  "startDate": "2026-05-01",
+  "status": "ongoing",
+  "researcherId": "R003"
+}
+
+### DELETE experiment (protected)
+DELETE http://localhost:8080/experiments/PASTE_ID_HERE
+
+### GET all samples
+GET http://localhost:8080/samples
+
+### GET single sample
+GET http://localhost:8080/samples/PASTE_ID_HERE
+
+### POST sample (protected)
+POST http://localhost:8080/samples
+Content-Type: application/json
+
+{
+  "name": "Test Sample",
+  "type": "Soil",
+  "source": "Test Field",
+  "collectionDate": "2026-04-01",
+  "storageLocation": "Freezer A",
+  "quantity": 100,
+  "unit": "grams",
+  "notes": "Test sample"
+}
+
+### Auth - Login
+GET http://localhost:8080/auth/github
+
+### Auth - Profile
+GET http://localhost:8080/auth/profile
+
+### Auth - Logout
+GET http://localhost:8080/auth/logout
