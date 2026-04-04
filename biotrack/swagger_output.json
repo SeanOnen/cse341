@@ -5,10 +5,10 @@
     "description": "Biosystems Engineering Research Management API. POST, PUT and DELETE routes require authentication via GitHub OAuth at /auth/github",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-biotrack.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/experiments/": {
