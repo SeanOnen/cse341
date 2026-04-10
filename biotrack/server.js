@@ -51,9 +51,13 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // Routes
 const experimentsRouter = require('./routes/experiments');
 const samplesRouter = require('./routes/samples');
+const equipmentRouter = require('./routes/equipment');
+const researchersRouter = require('./routes/researchers');
 const authRouter = require('./routes/auth');
 app.use('/experiments', experimentsRouter);
 app.use('/samples', samplesRouter);
+app.use('/equipment', equipmentRouter);
+app.use('/researchers', researchersRouter);
 app.use('/auth', authRouter);
 
 // Start Server

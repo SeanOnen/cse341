@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Experiment = require('./models/Experiment');
 const Sample = require('./models/Sample');
+const Equipment = require('./models/Equipment');
+const Researcher = require('./models/Researcher');
 require('dotenv').config();
 
 const experiments = [
@@ -91,18 +93,92 @@ const samples = [
   }
 ];
 
+const equipment = [
+  {
+    name: 'Centrifuge X200',
+    type: 'Centrifuge',
+    serialNumber: 'CX200-001',
+    location: 'Lab Room 3',
+    status: 'available',
+    lastMaintenance: '2026-01-15',
+    nextMaintenance: '2026-07-15'
+  },
+  {
+    name: 'pH Meter Pro',
+    type: 'pH Meter',
+    serialNumber: 'PHM-002',
+    location: 'Lab Room 1',
+    status: 'in-use',
+    lastMaintenance: '2026-02-01',
+    nextMaintenance: '2026-08-01'
+  },
+  {
+    name: 'Spectrophotometer S100',
+    type: 'Spectrophotometer',
+    serialNumber: 'SP100-003',
+    location: 'Lab Room 2',
+    status: 'available',
+    lastMaintenance: '2026-03-01',
+    nextMaintenance: '2026-09-01'
+  },
+  {
+    name: 'Autoclave A500',
+    type: 'Autoclave',
+    serialNumber: 'AC500-004',
+    location: 'Sterilization Room',
+    status: 'maintenance',
+    lastMaintenance: '2026-03-20',
+    nextMaintenance: '2026-04-20'
+  }
+];
+
+const researchers = [
+  {
+    firstName: 'Sean',
+    lastName: 'Onen',
+    email: 'sean@biotrack.com',
+    role: 'Lead Researcher',
+    specialization: 'Soil Microbiology',
+    department: 'Biosystems Engineering'
+  },
+  {
+    firstName: 'Stephen',
+    lastName: 'Isiko',
+    email: 'stephen@biotrack.com',
+    role: 'Research Associate',
+    specialization: 'Water Quality Analysis',
+    department: 'Biosystems Engineering'
+  },
+  {
+    firstName: 'Jane',
+    lastName: 'Nakato',
+    email: 'jane@biotrack.com',
+    role: 'Lab Technician',
+    specialization: 'Plant Biology',
+    department: 'Agricultural Sciences'
+  }
+];
+
 async function seed() {
   await mongoose.connect(process.env.MONGO_URI);
   console.log('✅ Connected to MongoDB');
 
   await Experiment.deleteMany({});
   await Sample.deleteMany({});
+  await Equipment.deleteMany({});
+  await Researcher.deleteMany({});
 
   await Experiment.insertMany(experiments);
   console.log(`✅ Seeded ${experiments.length} experiments`);
 
   await Sample.insertMany(samples);
   console.log(`✅ Seeded ${samples.length} samples`);
+
+  await Equipment.insertMany(equipment);
+  console.log(`✅ Seeded ${equipment.length} equipment`);
+
+  await Researcher.insertMany(researchers);
+  console.log(`✅ Seeded ${researchers.length} researchers`);
 
   await mongoose.disconnect();
   console.log('✅ Done');

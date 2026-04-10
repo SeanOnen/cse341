@@ -449,6 +449,390 @@
         }
       }
     },
+    "/equipment/": {
+      "get": {
+        "tags": [
+          "Equipment"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Equipment"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Equipment data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Centrifuge X200"
+                },
+                "type": {
+                  "type": "string",
+                  "example": "Centrifuge"
+                },
+                "serialNumber": {
+                  "type": "string",
+                  "example": "CX200-001"
+                },
+                "location": {
+                  "type": "string",
+                  "example": "Lab Room 3"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "available"
+                },
+                "lastMaintenance": {
+                  "type": "string",
+                  "example": "2026-01-15"
+                },
+                "nextMaintenance": {
+                  "type": "string",
+                  "example": "2026-07-15"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/equipment/{id}": {
+      "get": {
+        "tags": [
+          "Equipment"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Equipment"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Updated equipment data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Centrifuge X200"
+                },
+                "type": {
+                  "type": "string",
+                  "example": "Centrifuge"
+                },
+                "serialNumber": {
+                  "type": "string",
+                  "example": "CX200-001"
+                },
+                "location": {
+                  "type": "string",
+                  "example": "Lab Room 4"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "in-use"
+                },
+                "lastMaintenance": {
+                  "type": "string",
+                  "example": "2026-01-15"
+                },
+                "nextMaintenance": {
+                  "type": "string",
+                  "example": "2026-07-15"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Equipment"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/researchers/": {
+      "get": {
+        "tags": [
+          "Researchers"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Researchers"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Researcher data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Sean"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Onen"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "sean@biotrack.com"
+                },
+                "role": {
+                  "type": "string",
+                  "example": "Lead Researcher"
+                },
+                "specialization": {
+                  "type": "string",
+                  "example": "Soil Microbiology"
+                },
+                "department": {
+                  "type": "string",
+                  "example": "Biosystems Engineering"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/researchers/{id}": {
+      "get": {
+        "tags": [
+          "Researchers"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Researchers"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Updated researcher data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Sean"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Onen"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "sean@biotrack.com"
+                },
+                "role": {
+                  "type": "string",
+                  "example": "Senior Researcher"
+                },
+                "specialization": {
+                  "type": "string",
+                  "example": "Soil Microbiology"
+                },
+                "department": {
+                  "type": "string",
+                  "example": "Biosystems Engineering"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Researchers"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/auth/github": {
       "get": {
         "description": "",
